@@ -1,18 +1,16 @@
 import { getSession } from "@/lib/session";
 import { Chat } from "./chat";
+import { Connect } from "./connect";
 
-export default async function Home({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
-  const [session, { error }] = await Promise.all([getSession(), searchParams]);
+export default async function Home() {
+  const session = await getSession();
 
   if (!session) {
     return (
       <main className="landing">
         <h1>Copilot Chat</h1>
         <p>Connect your GitHub Copilot subscription and chat with an agent about anything.</p>
-        {error && <p className="error">{error}</p>}
-        <a className="button" href="/api/auth/login">
-          Connect GitHub Copilot
-        </a>
+        <Connect />
         <p className="fine">Your token stays in an encrypted cookie. Usage counts against your own Copilot plan.</p>
       </main>
     );
