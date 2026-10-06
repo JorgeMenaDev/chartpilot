@@ -72,6 +72,7 @@ function htmlTools(emit: (event: ChatEvent) => void) {
         };
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
+        console.error("html_preview failed:", message);
         return {
           resultType: "failure",
           error: message,
