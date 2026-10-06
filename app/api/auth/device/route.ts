@@ -29,6 +29,6 @@ export async function GET() {
   if (result.status !== "done") return Response.json(result);
 
   jar.delete(DEVICE_COOKIE);
-  await setSession({ ...(await fetchUser(result.token)), token: result.token });
+  await setSession({ ...(await fetchUser(result.token)), token: result.token }, result.expiresIn);
   return Response.json({ status: "done" });
 }

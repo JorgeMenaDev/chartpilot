@@ -30,10 +30,10 @@ export function requestDeviceCode() {
 
 export type PollResult =
   | { status: "pending"; interval?: number }
-  | { status: "done"; token: string }
+  | { status: "done"; token: string; expiresIn?: number }
   | { status: "failed"; message: string };
 
-type TokenResponse = { access_token?: string; error?: string; error_description?: string; interval?: number };
+type TokenResponse = { access_token?: string; expires_in?: number; error?: string; error_description?: string; interval?: number };
 
 export async function pollDeviceToken(deviceCode: string): Promise<PollResult> {
   const r = await postForm<TokenResponse>("https://github.com/login/oauth/access_token", {
@@ -41,7 +41,7 @@ export async function pollDeviceToken(deviceCode: string): Promise<PollResult> {
     device_code: deviceCode,
     grant_type: "urn:ietf:params:oauth:grant-type:device_code",
   });
-  if (r.access_token) return { status: "done", token: r.access_token };
+  if (r.access_token) return { status: "done", token: r.access_token, expiresIn: r.expires_in };
   if (r.error === "authorization_pending") return { status: "pending" };
   if (r.error === "slow_down") return { status: "pending", interval: r.interval };
   return { status: "failed", message: r.error_description ?? r.error ?? "Unknown error" };

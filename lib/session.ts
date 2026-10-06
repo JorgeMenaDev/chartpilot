@@ -37,13 +37,14 @@ export async function getSession() {
   return raw ? unseal(raw) : null;
 }
 
-export async function setSession(session: Session) {
+// maxAge follows the GitHub token: apps with expiring tokens issue 8-hour tokens.
+export async function setSession(session: Session, maxAge = 60 * 60 * 24 * 7) {
   (await cookies()).set(COOKIE, seal(session), {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",
-    maxAge: 60 * 60 * 24 * 7,
+    maxAge,
   });
 }
 
