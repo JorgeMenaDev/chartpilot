@@ -1,11 +1,11 @@
 "use client";
 
-import { ArrowUpIcon, SparklesIcon } from "lucide-react";
-import { useState } from "react";
+import { SparklesIcon } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ControlSeparator, EffortPicker, ModelPicker, SendButton } from "@/components/composer-controls";
 import { HtmlRenderFrame } from "@/components/html-render-frame";
 import { Markdown } from "@/components/markdown";
 import { Bubble, BubbleContent } from "@/components/ui/bubble";
-import { Button } from "@/components/ui/button";
 import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker";
 import { Message, MessageContent } from "@/components/ui/message";
 import {
@@ -17,8 +17,8 @@ import {
   MessageScrollerViewport,
 } from "@/components/ui/message-scroller";
 import { Spinner } from "@/components/ui/spinner";
-import { Textarea } from "@/components/ui/textarea";
-import type { ChatEvent, ChatMessage, ReplyPart } from "@/lib/copilot";
+import type { ChatEvent, ChatMessage, ModelChoice, ReasoningEffort, ReplyPart } from "@/lib/copilot";
+import type { ModelCatalog } from "@/lib/models";
 
 type Entry = ChatMessage & { id: string };
 
@@ -47,6 +47,7 @@ export function Chat({ login }: { login: string }) {
   const [input, setInput] = useState("");
   const [status, setStatus] = useState<string | null>(null);
   const busy = status !== null;
+  const { catalog, choice, setModel, setEffort } = useModelChoice();
 
   async function send(text: string) {
     text = text.trim();
@@ -69,7 +70,7 @@ export function Chat({ login }: { login: string }) {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history.map(({ id: _, ...m }) => m) }),
+        body: JSON.stringify({ messages: history.map(({ id: _, ...m }) => m), choice }),
       });
       if (res.status === 401) return window.location.reload();
       if (!res.ok || !res.body) return apply({ type: "error", message: `${res.status} ${await res.text()}` });
@@ -136,7 +137,11 @@ export function Chat({ login }: { login: string }) {
           </MessageScroller>
         </MessageScrollerProvider>
       )}
-      <Composer value={input} onChange={setInput} onSend={() => send(input)} busy={busy} />
+      <Composer value={input} onChange={setInput} onSend={() => send(input)} busy={busy}>
+        {catalog && (
+          <ComposerModelControls catalog={catalog} choice={choice} onModel={setModel} onEffort={setEffort} disabled={busy} />
+        )}
+      </Composer>
     </div>
   );
 }
@@ -177,17 +182,88 @@ function EmptyState({ login, onPick }: { login: string; onPick: (prompt: string)
   );
 }
 
-function Composer(props: { value: string; onChange: (v: string) => void; onSend: () => void; busy: boolean }) {
+const CHOICE_KEY = "copilot-chat:model-choice";
+
+/** The user's model catalog and their saved model + effort choice. */
+function useModelChoice() {
+  const [catalog, setCatalog] = useState<ModelCatalog | null>(null);
+  const [choice, setChoice] = useState<ModelChoice>({ model: "auto", effort: null });
+
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(CHOICE_KEY) ?? "null") as ModelChoice | null;
+      if (saved?.model) setChoice(saved);
+    } catch {}
+    fetch("/api/models")
+      .then((res) => (res.ok ? (res.json() as Promise<ModelCatalog>) : null))
+      .then(setCatalog)
+      .catch(() => {});
+  }, []);
+
+  // A saved model the plan no longer offers falls back to Auto.
+  const usable = catalog?.models.find((m) => m.id === choice.model && m.lockedReason === null);
+  const effective: ModelChoice = catalog && !usable ? { model: "auto", effort: choice.effort } : choice;
+
+  const update = (next: ModelChoice) => {
+    setChoice(next);
+    localStorage.setItem(CHOICE_KEY, JSON.stringify(next));
+  };
+  return {
+    catalog,
+    choice: effective,
+    setModel: (model: string) => update({ model, effort: null }),
+    setEffort: (effort: ReasoningEffort) => update({ ...effective, effort }),
+  };
+}
+
+function ComposerModelControls(props: {
+  catalog: ModelCatalog;
+  choice: ModelChoice;
+  onModel: (id: string) => void;
+  onEffort: (effort: ReasoningEffort) => void;
+  disabled: boolean;
+}) {
+  const model = props.catalog.models.find((m) => m.id === props.choice.model);
+  return (
+    <>
+      <ModelPicker models={props.catalog.models} value={props.choice.model} onChange={props.onModel} disabled={props.disabled} />
+      {model && model.efforts.length > 0 && (
+        <>
+          <ControlSeparator />
+          <EffortPicker
+            efforts={model.efforts}
+            defaultEffort={model.defaultEffort}
+            value={props.choice.effort}
+            onChange={props.onEffort}
+            disabled={props.disabled}
+            {...(props.catalog.autoOnly
+              ? { note: "On Copilot Free, Auto runs a model without reasoning, so effort has no effect." }
+              : {})}
+          />
+        </>
+      )}
+    </>
+  );
+}
+
+/** T3-style composer: a rounded glass surface, the prompt on top, controls and send below. */
+function Composer(props: {
+  value: string;
+  onChange: (v: string) => void;
+  onSend: () => void;
+  busy: boolean;
+  children?: React.ReactNode;
+}) {
   return (
     <form
-      className="mx-auto w-full max-w-3xl px-4 pb-4"
+      className="mx-auto w-full max-w-3xl px-3 pb-3 sm:px-4 sm:pb-4"
       onSubmit={(e) => {
         e.preventDefault();
         props.onSend();
       }}
     >
-      <div className="flex items-end gap-2 rounded-2xl border border-border bg-card p-2 shadow-sm focus-within:border-ring">
-        <Textarea
+      <div className="relative isolate rounded-3xl bg-(--surface-raised)/(--glass-opacity) shadow-composer backdrop-blur-(--glass-blur) backdrop-saturate-(--glass-saturation) after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:border after:border-[color-mix(in_srgb,white_5%,transparent)] dark:shadow-none">
+        <textarea
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
           onKeyDown={(e) => {
@@ -197,13 +273,16 @@ function Composer(props: { value: string; onChange: (v: string) => void; onSend:
             }
           }}
           placeholder="Ask something silly…"
-          rows={1}
+          rows={2}
           autoFocus
-          className="max-h-48 min-h-10 resize-none border-0 bg-transparent shadow-none focus-visible:ring-0 dark:bg-transparent"
+          className="field-sizing-content block max-h-48 min-h-16 w-full resize-none bg-transparent px-4 pt-4 pb-2 text-base leading-relaxed outline-none placeholder:text-muted-foreground/70 sm:text-sm"
         />
-        <Button type="submit" size="icon" className="rounded-xl" disabled={props.busy || !props.value.trim()} aria-label="Send">
-          <ArrowUpIcon />
-        </Button>
+        <div className="flex min-w-0 flex-nowrap items-center justify-between gap-2 px-3 pb-3 sm:px-4 sm:pb-4">
+          <div className="relative -m-1 -ms-3.5 flex min-w-0 flex-1 items-center gap-1 overflow-x-auto p-1 ps-3.5 [scrollbar-width:none]">
+            {props.children}
+          </div>
+          <SendButton disabled={props.busy || !props.value.trim()} />
+        </div>
       </div>
     </form>
   );

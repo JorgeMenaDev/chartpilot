@@ -1,4 +1,4 @@
-import { approveAll, CopilotClient, defineTool, ToolSet, type ToolResultObject } from "@github/copilot-sdk";
+import { approveAll, CopilotClient, defineTool, ToolSet, type SessionConfig, type ToolResultObject } from "@github/copilot-sdk";
 import { previewHtml } from "./html-preview";
 import {
   clampHtmlRenderHeight,
@@ -18,6 +18,11 @@ import {
 export type ReplyPart = { kind: "text"; text: string } | { kind: "render"; render: HtmlRender };
 
 export type ChatMessage = { role: "user"; content: string } | { role: "assistant"; parts: ReplyPart[] };
+
+export type ReasoningEffort = NonNullable<SessionConfig["reasoningEffort"]>;
+
+/** The composer's model and effort choice. "auto" lets Copilot route the turn. */
+export type ModelChoice = { model: string; effort: ReasoningEffort | null };
 
 /** What /api/chat streams to the browser, one JSON object per line. */
 export type ChatEvent =
@@ -110,7 +115,7 @@ function htmlTools(emit: (event: ChatEvent) => void) {
 // One Copilot runtime per GitHub user, reused while this server instance stays warm.
 const clients = new Map<string, Promise<CopilotClient>>();
 
-function clientFor(login: string, token: string) {
+export function clientFor(login: string, token: string) {
   let client = clients.get(login);
   if (!client) {
     const home = `/tmp/copilot/${login}`;
@@ -151,7 +156,7 @@ function toPrompt(messages: ChatMessage[]) {
 }
 
 /** Runs one turn and streams it as newline-delimited ChatEvents. */
-export async function streamReply(login: string, token: string, messages: ChatMessage[]) {
+export async function streamReply(login: string, token: string, messages: ChatMessage[], choice: ModelChoice) {
   const encoder = new TextEncoder();
   let controller!: ReadableStreamDefaultController<Uint8Array>;
   const stream = new ReadableStream<Uint8Array>({ start: (c) => void (controller = c) });
@@ -160,6 +165,8 @@ export async function streamReply(login: string, token: string, messages: ChatMe
   const tools = htmlTools(emit);
   const client = await clientFor(login, token);
   const session = await client.createSession({
+    ...(choice.model === "auto" ? {} : { model: choice.model }),
+    ...(choice.effort ? { reasoningEffort: choice.effort } : {}),
     onPermissionRequest: approveAll,
     tools,
     availableTools: tools.reduce((set, tool) => set.addCustom(tool.name), new ToolSet()),

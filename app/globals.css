@@ -127,3 +127,42 @@
     @apply font-sans;
     }
 }
+/* T3 Code composer tokens (apps/web/src/index.css, MIT), dark theme. */
+@theme inline {
+    --color-message-action: var(--message-action);
+    --color-message-action-foreground: var(--message-action-foreground);
+    --color-message-action-hover: var(--message-action-hover);
+    --color-secondary-label: var(--secondary-label);
+    --color-icon-muted: var(--icon-muted);
+    --shadow-composer: 0 12px 28px -18px rgb(0 0 0 / 40%);
+}
+.dark {
+    --background: #0a0a0a;
+    --foreground: #f5f5f5;
+    --card: #111111;
+    --popover: #111111;
+    --muted: #111111;
+    --muted-foreground: #818181;
+    --border: #191919;
+    --accent: color-mix(in srgb, white 4%, transparent);
+    --accent-foreground: #f5f5f5;
+    --ring: #346bf1;
+    --control-radius: 0.5rem;
+    --glass-blur: 16px;
+    --glass-opacity: 80%;
+    --glass-saturation: 1.08;
+    --surface-raised: #111111;
+    --contrast-foreground: #ffffff;
+    --secondary-label: var(--muted-foreground);
+    --icon-muted: var(--muted-foreground);
+    --message-action: #346bf1;
+    --message-action-foreground: #ffffff;
+    --message-action-hover: color-mix(in srgb, #346bf1 88%, white);
+}
+
+@utility dropdown-glass {
+    background: color-mix(in srgb, var(--popover) 18%, color-mix(in srgb, var(--popover) var(--glass-opacity), transparent));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    border: 1px solid color-mix(in srgb, var(--contrast-foreground) 10%, transparent);
+}
