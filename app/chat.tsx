@@ -59,6 +59,7 @@ export function Chat({ login }: { login: string }) {
     setStatus("Thinking");
 
     const apply = (event: ChatEvent) => {
+      if (event.type === "ping") return;
       if (event.type === "status") return setStatus(event.label ?? "Writing");
       setEntries((prev) =>
         prev.map((e) => (e.id === replyId && e.role === "assistant" ? { ...e, parts: appendPart(e.parts, event) } : e)),
@@ -83,7 +84,7 @@ export function Chat({ login }: { login: string }) {
         for (const line of lines) if (line) apply(JSON.parse(line) as ChatEvent);
       }
     } catch (error) {
-      apply({ type: "error", message: String(error) });
+      apply({ type: "error", message: `The connection dropped before the reply finished (${String(error)}). Send the message again.` });
     } finally {
       setStatus(null);
     }

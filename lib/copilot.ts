@@ -29,7 +29,8 @@ export type ChatEvent =
   | { type: "text"; delta: string }
   | { type: "status"; label: string | null }
   | { type: "render"; render: HtmlRender }
-  | { type: "error"; message: string };
+  | { type: "error"; message: string }
+  | { type: "ping" };
 
 const SYSTEM_PROMPT = `You are a friendly, curious chat companion in a small web app. Talk about anything, including silly topics. Keep text replies short and conversational, and use Markdown when it helps.
 
@@ -178,6 +179,10 @@ export async function streamReply(login: string, token: string, messages: ChatMe
     if (e.data.toolName === HTML_RENDER_TOOL_NAME) emit({ type: "status", label: "Publishing the visual" });
   });
 
+  // While the model writes a page's HTML nothing else is sent for a minute or more,
+  // and mobile Safari drops a silent connection, so keep it warm.
+  const heartbeat = setInterval(() => emit({ type: "ping" }), 10_000);
+
   void (async () => {
     try {
       emit({ type: "status", label: "Thinking" });
@@ -185,6 +190,7 @@ export async function streamReply(login: string, token: string, messages: ChatMe
     } catch (error) {
       emit({ type: "error", message: error instanceof Error ? error.message : String(error) });
     } finally {
+      clearInterval(heartbeat);
       controller.close();
       await session.disconnect().catch(() => {});
     }
