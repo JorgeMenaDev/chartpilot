@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: "Copilot Chat POC",
-  description: "Chat with an agent on your own GitHub Copilot subscription.",
+  title: "Chartpilot",
+  description: "Chat with an agent on your own GitHub Copilot plan. It draws charts when they say more than words.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

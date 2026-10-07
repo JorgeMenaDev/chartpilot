@@ -49,7 +49,7 @@ export async function pollDeviceToken(deviceCode: string): Promise<PollResult> {
 
 export async function fetchUser(token: string) {
   const res = await fetch("https://api.github.com/user", {
-    headers: { Authorization: `Bearer ${token}`, "User-Agent": "copilot-chat-poc" },
+    headers: { Authorization: `Bearer ${token}`, "User-Agent": "chartpilot" },
   });
   if (!res.ok) throw new Error(`GitHub /user returned ${res.status}`);
   const user = (await res.json()) as { login: string; avatar_url: string };

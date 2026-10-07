@@ -13,7 +13,7 @@ export default async function Home() {
       <main className="flex min-h-dvh flex-col items-center justify-center gap-6 px-6 text-center">
         <div className="flex size-14 items-center justify-center rounded-2xl bg-primary/15 text-2xl">✨</div>
         <div className="max-w-md space-y-2">
-          <h1 className="text-3xl font-semibold tracking-tight">Copilot Chat</h1>
+          <h1 className="text-3xl font-semibold tracking-tight">Chartpilot</h1>
           <p className="text-muted-foreground">
             Connect your GitHub Copilot subscription and chat with an agent that draws charts when they help.
           </p>
@@ -29,7 +29,7 @@ export default async function Home() {
   return (
     <main className="flex h-dvh flex-col">
       <header className="flex items-center justify-between border-b border-border px-4 py-2.5">
-        <span className="font-semibold">Copilot Chat</span>
+        <span className="font-semibold">Chartpilot</span>
         <div className="flex items-center gap-1">
           {/* A full reload is the simplest "new chat": chat state lives only in the page. */}
           <Button variant="ghost" size="sm" nativeButton={false} render={<a href="/" />}>
