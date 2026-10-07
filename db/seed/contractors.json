@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ctr_deepline",
+    "client_company_id": "sfs",
+    "name": "Deepline Diving Services",
+    "service": "diving",
+    "tax_id": "NO-931 100 200",
+    "contact_email": "compliance@deepline.example"
+  },
+  {
+    "id": "ctr_coastal",
+    "client_company_id": "sfs",
+    "name": "Coastal Freight Logistics",
+    "service": "logistics",
+    "tax_id": "NO-932 137 253",
+    "contact_email": "compliance@coastal.example"
+  },
+  {
+    "id": "ctr_netguard",
+    "client_company_id": "sfs",
+    "name": "NetGuard Aquaculture Maintenance",
+    "service": "net_maintenance",
+    "tax_id": "NO-933 174 306",
+    "contact_email": "compliance@netguard.example"
+  },
+  {
+    "id": "ctr_harbour_table",
+    "client_company_id": "sfs",
+    "name": "Harbour Table Catering",
+    "service": "catering",
+    "tax_id": "NO-934 211 359",
+    "contact_email": "compliance@harbour.example"
+  },
+  {
+    "id": "ctr_sentinel",
+    "client_company_id": "sfs",
+    "name": "Sentinel Security Group",
+    "service": "security",
+    "tax_id": "NO-935 248 412",
+    "contact_email": "compliance@sentinel.example"
+  },
+  {
+    "id": "ctr_volta",
+    "client_company_id": "sfs",
+    "name": "Volta Electrical Contractors",
+    "service": "electrical",
+    "tax_id": "NO-937 285 465",
+    "contact_email": "compliance@volta.example"
+  },
+  {
+    "id": "ctr_skerry",
+    "client_company_id": "sfs",
+    "name": "Skerry Boat Transport",
+    "service": "boat_transport",
+    "tax_id": "NO-938 322 518",
+    "contact_email": "compliance@skerry.example"
+  },
+  {
+    "id": "ctr_brightwave",
+    "client_company_id": "sfs",
+    "name": "Brightwave Cleaning Co.",
+    "service": "cleaning",
+    "tax_id": "NO-939 359 571",
+    "contact_email": "compliance@brightwave.example"
+  }
+]

@@ -7,6 +7,7 @@ const config: NextConfig = {
   outputFileTracingIncludes: {
     "/api/chat": ["./node_modules/@github/copilot-sdk-linux-x64/**/*"],
     "/api/models": ["./node_modules/@github/copilot-sdk-linux-x64/**/*"],
+    "/api/visualize": ["./node_modules/@github/copilot-sdk-linux-x64/**/*"],
   },
 };
 

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "con_deepline_1",
+    "contractor_id": "ctr_deepline",
+    "work_site_id": "site_fjord_point",
+    "label": "Deepline · Fjord Point Farm",
+    "status": "active",
+    "starts_on": "2025-05-18",
+    "ends_on": null
+  },
+  {
+    "id": "con_deepline_2",
+    "contractor_id": "ctr_deepline",
+    "work_site_id": "site_cormorant_bay",
+    "label": "Deepline · Cormorant Bay Farm",
+    "status": "active",
+    "starts_on": "2024-06-29",
+    "ends_on": null
+  },
+  {
+    "id": "con_coastal_1",
+    "contractor_id": "ctr_coastal",
+    "work_site_id": "site_harbour_plant",
+    "label": "Coastal · Harbour Processing Plant",
+    "status": "active",
+    "starts_on": "2025-01-23",
+    "ends_on": null
+  },
+  {
+    "id": "con_netguard_1",
+    "contractor_id": "ctr_netguard",
+    "work_site_id": "site_fjord_point",
+    "label": "NetGuard · Fjord Point Farm",
+    "status": "active",
+    "starts_on": "2024-05-20",
+    "ends_on": null
+  },
+  {
+    "id": "con_netguard_2",
+    "contractor_id": "ctr_netguard",
+    "work_site_id": "site_skerry_sound",
+    "label": "NetGuard · Skerry Sound Farm",
+    "status": "active",
+    "starts_on": "2024-12-03",
+    "ends_on": null
+  },
+  {
+    "id": "con_harbour_table_1",
+    "contractor_id": "ctr_harbour_table",
+    "work_site_id": "site_harbour_plant",
+    "label": "Harbour · Harbour Processing Plant",
+    "status": "active",
+    "starts_on": "2025-03-05",
+    "ends_on": null
+  },
+  {
+    "id": "con_sentinel_1",
+    "contractor_id": "ctr_sentinel",
+    "work_site_id": "site_harbour_plant",
+    "label": "Sentinel · Harbour Processing Plant",
+    "status": "active",
+    "starts_on": "2025-09-09",
+    "ends_on": null
+  },
+  {
+    "id": "con_sentinel_2",
+    "contractor_id": "ctr_sentinel",
+    "work_site_id": "site_cormorant_bay",
+    "label": "Sentinel · Cormorant Bay Farm",
+    "status": "active",
+    "starts_on": "2024-06-01",
+    "ends_on": null
+  },
+  {
+    "id": "con_volta_1",
+    "contractor_id": "ctr_volta",
+    "work_site_id": "site_harbour_plant",
+    "label": "Volta · Harbour Processing Plant",
+    "status": "active",
+    "starts_on": "2024-07-05",
+    "ends_on": null
+  },
+  {
+    "id": "con_skerry_1",
+    "contractor_id": "ctr_skerry",
+    "work_site_id": "site_skerry_sound",
+    "label": "Skerry · Skerry Sound Farm",
+    "status": "active",
+    "starts_on": "2026-02-19",
+    "ends_on": null
+  },
+  {
+    "id": "con_skerry_2",
+    "contractor_id": "ctr_skerry",
+    "work_site_id": "site_fjord_point",
+    "label": "Skerry · Fjord Point Farm",
+    "status": "active",
+    "starts_on": "2024-07-17",
+    "ends_on": null
+  },
+  {
+    "id": "con_brightwave_1",
+    "contractor_id": "ctr_brightwave",
+    "work_site_id": "site_harbour_plant",
+    "label": "Brightwave · Harbour Processing Plant",
+    "status": "active",
+    "starts_on": "2026-03-02",
+    "ends_on": null
+  }
+]

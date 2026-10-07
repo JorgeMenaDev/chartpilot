@@ -1,0 +1,866 @@
+[
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2025-11-01",
+    "required_documents": 71,
+    "covered_documents": 51,
+    "expired_documents": 6,
+    "workers_cleared": 5,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2025-12-01",
+    "required_documents": 72,
+    "covered_documents": 54,
+    "expired_documents": 5,
+    "workers_cleared": 5,
+    "workers_total": 9
+  },
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2026-01-01",
+    "required_documents": 74,
+    "covered_documents": 53,
+    "expired_documents": 6,
+    "workers_cleared": 5,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2026-02-01",
+    "required_documents": 74,
+    "covered_documents": 54,
+    "expired_documents": 6,
+    "workers_cleared": 5,
+    "workers_total": 9
+  },
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2026-03-01",
+    "required_documents": 71,
+    "covered_documents": 52,
+    "expired_documents": 6,
+    "workers_cleared": 4,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2026-04-01",
+    "required_documents": 74,
+    "covered_documents": 52,
+    "expired_documents": 7,
+    "workers_cleared": 4,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2026-05-01",
+    "required_documents": 74,
+    "covered_documents": 51,
+    "expired_documents": 7,
+    "workers_cleared": 5,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2026-06-01",
+    "required_documents": 74,
+    "covered_documents": 47,
+    "expired_documents": 8,
+    "workers_cleared": 4,
+    "workers_total": 9
+  },
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2026-07-01",
+    "required_documents": 72,
+    "covered_documents": 45,
+    "expired_documents": 8,
+    "workers_cleared": 4,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2026-08-01",
+    "required_documents": 72,
+    "covered_documents": 43,
+    "expired_documents": 9,
+    "workers_cleared": 3,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2026-09-01",
+    "required_documents": 74,
+    "covered_documents": 43,
+    "expired_documents": 9,
+    "workers_cleared": 3,
+    "workers_total": 9
+  },
+  {
+    "contractor_id": "ctr_deepline",
+    "period_month": "2026-10-01",
+    "required_documents": 74,
+    "covered_documents": 41,
+    "expired_documents": 17,
+    "workers_cleared": 0,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2025-11-01",
+    "required_documents": 63,
+    "covered_documents": 29,
+    "expired_documents": 10,
+    "workers_cleared": 1,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2025-12-01",
+    "required_documents": 65,
+    "covered_documents": 39,
+    "expired_documents": 8,
+    "workers_cleared": 4,
+    "workers_total": 12
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2026-01-01",
+    "required_documents": 65,
+    "covered_documents": 42,
+    "expired_documents": 7,
+    "workers_cleared": 5,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2026-02-01",
+    "required_documents": 64,
+    "covered_documents": 45,
+    "expired_documents": 6,
+    "workers_cleared": 6,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2026-03-01",
+    "required_documents": 63,
+    "covered_documents": 46,
+    "expired_documents": 5,
+    "workers_cleared": 6,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2026-04-01",
+    "required_documents": 65,
+    "covered_documents": 49,
+    "expired_documents": 5,
+    "workers_cleared": 6,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2026-05-01",
+    "required_documents": 66,
+    "covered_documents": 51,
+    "expired_documents": 4,
+    "workers_cleared": 8,
+    "workers_total": 12
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2026-06-01",
+    "required_documents": 66,
+    "covered_documents": 53,
+    "expired_documents": 4,
+    "workers_cleared": 7,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2026-07-01",
+    "required_documents": 64,
+    "covered_documents": 53,
+    "expired_documents": 3,
+    "workers_cleared": 8,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2026-08-01",
+    "required_documents": 63,
+    "covered_documents": 54,
+    "expired_documents": 3,
+    "workers_cleared": 8,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2026-09-01",
+    "required_documents": 65,
+    "covered_documents": 55,
+    "expired_documents": 3,
+    "workers_cleared": 8,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_coastal",
+    "period_month": "2026-10-01",
+    "required_documents": 66,
+    "covered_documents": 59,
+    "expired_documents": 0,
+    "workers_cleared": 7,
+    "workers_total": 12
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2025-11-01",
+    "required_documents": 70,
+    "covered_documents": 63,
+    "expired_documents": 2,
+    "workers_cleared": 10,
+    "workers_total": 12
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2025-12-01",
+    "required_documents": 69,
+    "covered_documents": 64,
+    "expired_documents": 1,
+    "workers_cleared": 10,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2026-01-01",
+    "required_documents": 70,
+    "covered_documents": 63,
+    "expired_documents": 2,
+    "workers_cleared": 8,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2026-02-01",
+    "required_documents": 72,
+    "covered_documents": 68,
+    "expired_documents": 1,
+    "workers_cleared": 11,
+    "workers_total": 12
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2026-03-01",
+    "required_documents": 72,
+    "covered_documents": 66,
+    "expired_documents": 2,
+    "workers_cleared": 9,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2026-04-01",
+    "required_documents": 70,
+    "covered_documents": 64,
+    "expired_documents": 2,
+    "workers_cleared": 10,
+    "workers_total": 12
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2026-05-01",
+    "required_documents": 72,
+    "covered_documents": 67,
+    "expired_documents": 2,
+    "workers_cleared": 9,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2026-06-01",
+    "required_documents": 70,
+    "covered_documents": 66,
+    "expired_documents": 1,
+    "workers_cleared": 9,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2026-07-01",
+    "required_documents": 72,
+    "covered_documents": 68,
+    "expired_documents": 1,
+    "workers_cleared": 9,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2026-08-01",
+    "required_documents": 72,
+    "covered_documents": 68,
+    "expired_documents": 1,
+    "workers_cleared": 9,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2026-09-01",
+    "required_documents": 72,
+    "covered_documents": 68,
+    "expired_documents": 1,
+    "workers_cleared": 11,
+    "workers_total": 12
+  },
+  {
+    "contractor_id": "ctr_netguard",
+    "period_month": "2026-10-01",
+    "required_documents": 72,
+    "covered_documents": 67,
+    "expired_documents": 0,
+    "workers_cleared": 7,
+    "workers_total": 12
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2025-11-01",
+    "required_documents": 47,
+    "covered_documents": 45,
+    "expired_documents": 1,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2025-12-01",
+    "required_documents": 47,
+    "covered_documents": 45,
+    "expired_documents": 1,
+    "workers_cleared": 6,
+    "workers_total": 7
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2026-01-01",
+    "required_documents": 46,
+    "covered_documents": 44,
+    "expired_documents": 1,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2026-02-01",
+    "required_documents": 45,
+    "covered_documents": 42,
+    "expired_documents": 1,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2026-03-01",
+    "required_documents": 47,
+    "covered_documents": 45,
+    "expired_documents": 1,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2026-04-01",
+    "required_documents": 46,
+    "covered_documents": 45,
+    "expired_documents": 0,
+    "workers_cleared": 8,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2026-05-01",
+    "required_documents": 44,
+    "covered_documents": 42,
+    "expired_documents": 1,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2026-06-01",
+    "required_documents": 44,
+    "covered_documents": 42,
+    "expired_documents": 1,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2026-07-01",
+    "required_documents": 46,
+    "covered_documents": 44,
+    "expired_documents": 1,
+    "workers_cleared": 6,
+    "workers_total": 6
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2026-08-01",
+    "required_documents": 47,
+    "covered_documents": 45,
+    "expired_documents": 1,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2026-09-01",
+    "required_documents": 47,
+    "covered_documents": 45,
+    "expired_documents": 1,
+    "workers_cleared": 6,
+    "workers_total": 6
+  },
+  {
+    "contractor_id": "ctr_harbour_table",
+    "period_month": "2026-10-01",
+    "required_documents": 47,
+    "covered_documents": 45,
+    "expired_documents": 0,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2025-11-01",
+    "required_documents": 56,
+    "covered_documents": 48,
+    "expired_documents": 3,
+    "workers_cleared": 5,
+    "workers_total": 7
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2025-12-01",
+    "required_documents": 54,
+    "covered_documents": 45,
+    "expired_documents": 3,
+    "workers_cleared": 5,
+    "workers_total": 7
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2026-01-01",
+    "required_documents": 57,
+    "covered_documents": 48,
+    "expired_documents": 3,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2026-02-01",
+    "required_documents": 55,
+    "covered_documents": 47,
+    "expired_documents": 2,
+    "workers_cleared": 7,
+    "workers_total": 9
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2026-03-01",
+    "required_documents": 57,
+    "covered_documents": 48,
+    "expired_documents": 3,
+    "workers_cleared": 7,
+    "workers_total": 9
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2026-04-01",
+    "required_documents": 57,
+    "covered_documents": 49,
+    "expired_documents": 2,
+    "workers_cleared": 5,
+    "workers_total": 7
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2026-05-01",
+    "required_documents": 55,
+    "covered_documents": 47,
+    "expired_documents": 2,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2026-06-01",
+    "required_documents": 54,
+    "covered_documents": 46,
+    "expired_documents": 2,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2026-07-01",
+    "required_documents": 57,
+    "covered_documents": 49,
+    "expired_documents": 2,
+    "workers_cleared": 7,
+    "workers_total": 9
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2026-08-01",
+    "required_documents": 55,
+    "covered_documents": 48,
+    "expired_documents": 2,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2026-09-01",
+    "required_documents": 56,
+    "covered_documents": 48,
+    "expired_documents": 2,
+    "workers_cleared": 5,
+    "workers_total": 7
+  },
+  {
+    "contractor_id": "ctr_sentinel",
+    "period_month": "2026-10-01",
+    "required_documents": 57,
+    "covered_documents": 49,
+    "expired_documents": 1,
+    "workers_cleared": 4,
+    "workers_total": 9
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2025-11-01",
+    "required_documents": 46,
+    "covered_documents": 42,
+    "expired_documents": 1,
+    "workers_cleared": 5,
+    "workers_total": 6
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2025-12-01",
+    "required_documents": 45,
+    "covered_documents": 41,
+    "expired_documents": 1,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2026-01-01",
+    "required_documents": 46,
+    "covered_documents": 42,
+    "expired_documents": 1,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2026-02-01",
+    "required_documents": 43,
+    "covered_documents": 39,
+    "expired_documents": 1,
+    "workers_cleared": 6,
+    "workers_total": 7
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2026-03-01",
+    "required_documents": 44,
+    "covered_documents": 38,
+    "expired_documents": 2,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2026-04-01",
+    "required_documents": 44,
+    "covered_documents": 38,
+    "expired_documents": 2,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2026-05-01",
+    "required_documents": 44,
+    "covered_documents": 39,
+    "expired_documents": 2,
+    "workers_cleared": 5,
+    "workers_total": 6
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2026-06-01",
+    "required_documents": 45,
+    "covered_documents": 39,
+    "expired_documents": 2,
+    "workers_cleared": 5,
+    "workers_total": 7
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2026-07-01",
+    "required_documents": 45,
+    "covered_documents": 38,
+    "expired_documents": 2,
+    "workers_cleared": 5,
+    "workers_total": 6
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2026-08-01",
+    "required_documents": 44,
+    "covered_documents": 38,
+    "expired_documents": 2,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2026-09-01",
+    "required_documents": 45,
+    "covered_documents": 38,
+    "expired_documents": 2,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_volta",
+    "period_month": "2026-10-01",
+    "required_documents": 46,
+    "covered_documents": 39,
+    "expired_documents": 4,
+    "workers_cleared": 4,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2025-11-01",
+    "required_documents": 69,
+    "covered_documents": 54,
+    "expired_documents": 5,
+    "workers_cleared": 7,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2025-12-01",
+    "required_documents": 67,
+    "covered_documents": 52,
+    "expired_documents": 5,
+    "workers_cleared": 7,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2026-01-01",
+    "required_documents": 66,
+    "covered_documents": 51,
+    "expired_documents": 5,
+    "workers_cleared": 7,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2026-02-01",
+    "required_documents": 67,
+    "covered_documents": 50,
+    "expired_documents": 5,
+    "workers_cleared": 6,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2026-03-01",
+    "required_documents": 69,
+    "covered_documents": 51,
+    "expired_documents": 5,
+    "workers_cleared": 6,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2026-04-01",
+    "required_documents": 67,
+    "covered_documents": 50,
+    "expired_documents": 5,
+    "workers_cleared": 6,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2026-05-01",
+    "required_documents": 69,
+    "covered_documents": 52,
+    "expired_documents": 5,
+    "workers_cleared": 6,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2026-06-01",
+    "required_documents": 68,
+    "covered_documents": 51,
+    "expired_documents": 5,
+    "workers_cleared": 5,
+    "workers_total": 9
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2026-07-01",
+    "required_documents": 67,
+    "covered_documents": 48,
+    "expired_documents": 6,
+    "workers_cleared": 6,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2026-08-01",
+    "required_documents": 67,
+    "covered_documents": 50,
+    "expired_documents": 5,
+    "workers_cleared": 6,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2026-09-01",
+    "required_documents": 67,
+    "covered_documents": 50,
+    "expired_documents": 5,
+    "workers_cleared": 5,
+    "workers_total": 9
+  },
+  {
+    "contractor_id": "ctr_skerry",
+    "period_month": "2026-10-01",
+    "required_documents": 69,
+    "covered_documents": 50,
+    "expired_documents": 2,
+    "workers_cleared": 2,
+    "workers_total": 11
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2025-11-01",
+    "required_documents": 56,
+    "covered_documents": 49,
+    "expired_documents": 2,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2025-12-01",
+    "required_documents": 54,
+    "covered_documents": 48,
+    "expired_documents": 2,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2026-01-01",
+    "required_documents": 54,
+    "covered_documents": 48,
+    "expired_documents": 2,
+    "workers_cleared": 6,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2026-02-01",
+    "required_documents": 56,
+    "covered_documents": 49,
+    "expired_documents": 2,
+    "workers_cleared": 8,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2026-03-01",
+    "required_documents": 54,
+    "covered_documents": 48,
+    "expired_documents": 2,
+    "workers_cleared": 7,
+    "workers_total": 9
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2026-04-01",
+    "required_documents": 56,
+    "covered_documents": 49,
+    "expired_documents": 2,
+    "workers_cleared": 8,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2026-05-01",
+    "required_documents": 53,
+    "covered_documents": 47,
+    "expired_documents": 2,
+    "workers_cleared": 8,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2026-06-01",
+    "required_documents": 53,
+    "covered_documents": 48,
+    "expired_documents": 1,
+    "workers_cleared": 9,
+    "workers_total": 10
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2026-07-01",
+    "required_documents": 56,
+    "covered_documents": 50,
+    "expired_documents": 2,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2026-08-01",
+    "required_documents": 54,
+    "covered_documents": 49,
+    "expired_documents": 2,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2026-09-01",
+    "required_documents": 56,
+    "covered_documents": 51,
+    "expired_documents": 2,
+    "workers_cleared": 7,
+    "workers_total": 8
+  },
+  {
+    "contractor_id": "ctr_brightwave",
+    "period_month": "2026-10-01",
+    "required_documents": 56,
+    "covered_documents": 51,
+    "expired_documents": 1,
+    "workers_cleared": 5,
+    "workers_total": 10
+  }
+]

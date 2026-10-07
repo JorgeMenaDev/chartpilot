@@ -1,8 +1,8 @@
 "use client";
 
 import { SparklesIcon } from "lucide-react";
-import { useEffect, useState } from "react";
-import { ControlSeparator, EffortPicker, ModelPicker, SendButton } from "@/components/composer-controls";
+import { useState } from "react";
+import { ModelControls, SendButton } from "@/components/composer-controls";
 import { HtmlRenderFrame } from "@/components/html-render-frame";
 import { Markdown } from "@/components/markdown";
 import { Bubble, BubbleContent } from "@/components/ui/bubble";
@@ -17,8 +17,8 @@ import {
   MessageScrollerViewport,
 } from "@/components/ui/message-scroller";
 import { Spinner } from "@/components/ui/spinner";
-import type { ChatEvent, ChatMessage, ModelChoice, ReasoningEffort, ReplyPart } from "@/lib/copilot";
-import type { ModelCatalog } from "@/lib/models";
+import type { ChatEvent, ChatMessage, ReplyPart } from "@/lib/copilot";
+import { CHAT_MODEL_KEY, useModelChoice } from "@/lib/model-choice";
 
 type Entry = ChatMessage & { id: string };
 
@@ -47,7 +47,7 @@ export function Chat({ login }: { login: string }) {
   const [input, setInput] = useState("");
   const [status, setStatus] = useState<string | null>(null);
   const busy = status !== null;
-  const { catalog, choice, setModel, setEffort } = useModelChoice();
+  const { catalog, choice, setModel, setEffort } = useModelChoice(CHAT_MODEL_KEY, true);
 
   async function send(text: string) {
     text = text.trim();
@@ -153,7 +153,7 @@ export function Chat({ login }: { login: string }) {
       )}
       <Composer value={input} onChange={setInput} onSend={() => send(input)} busy={busy}>
         {catalog && (
-          <ComposerModelControls catalog={catalog} choice={choice} onModel={setModel} onEffort={setEffort} disabled={busy} />
+          <ModelControls catalog={catalog} choice={choice} onModel={setModel} onEffort={setEffort} disabled={busy} />
         )}
       </Composer>
     </div>
@@ -193,70 +193,6 @@ function EmptyState({ login, onPick }: { login: string; onPick: (prompt: string)
         ))}
       </div>
     </div>
-  );
-}
-
-const CHOICE_KEY = "copilot-chat:model-choice";
-
-/** The user's model catalog and their saved model + effort choice. */
-function useModelChoice() {
-  const [catalog, setCatalog] = useState<ModelCatalog | null>(null);
-  const [choice, setChoice] = useState<ModelChoice>({ model: "auto", effort: null });
-
-  useEffect(() => {
-    try {
-      const saved = JSON.parse(localStorage.getItem(CHOICE_KEY) ?? "null") as ModelChoice | null;
-      if (saved?.model) setChoice(saved);
-    } catch {}
-    fetch("/api/models")
-      .then((res) => (res.ok ? (res.json() as Promise<ModelCatalog>) : null))
-      .then(setCatalog)
-      .catch(() => {});
-  }, []);
-
-  // A saved model the plan no longer offers falls back to Auto.
-  const usable = catalog?.models.find((m) => m.id === choice.model && m.lockedReason === null);
-  const effective: ModelChoice = catalog && !usable ? { model: "auto", effort: choice.effort } : choice;
-
-  const update = (next: ModelChoice) => {
-    setChoice(next);
-    localStorage.setItem(CHOICE_KEY, JSON.stringify(next));
-  };
-  return {
-    catalog,
-    choice: effective,
-    setModel: (model: string) => update({ model, effort: null }),
-    setEffort: (effort: ReasoningEffort) => update({ ...effective, effort }),
-  };
-}
-
-function ComposerModelControls(props: {
-  catalog: ModelCatalog;
-  choice: ModelChoice;
-  onModel: (id: string) => void;
-  onEffort: (effort: ReasoningEffort) => void;
-  disabled: boolean;
-}) {
-  const model = props.catalog.models.find((m) => m.id === props.choice.model);
-  return (
-    <>
-      <ModelPicker models={props.catalog.models} value={props.choice.model} onChange={props.onModel} disabled={props.disabled} />
-      {model && model.efforts.length > 0 && (
-        <>
-          <ControlSeparator />
-          <EffortPicker
-            efforts={model.efforts}
-            defaultEffort={model.defaultEffort}
-            value={props.choice.effort}
-            onChange={props.onEffort}
-            disabled={props.disabled}
-            {...(props.catalog.autoOnly
-              ? { note: "On Copilot Free, Auto runs a model without reasoning, so effort has no effect." }
-              : {})}
-          />
-        </>
-      )}
-    </>
   );
 }
 

@@ -1,0 +1,530 @@
+[
+  {
+    "id": "wkr_0001",
+    "contractor_id": "ctr_deepline",
+    "full_name": "Henrik Rojas",
+    "role": "Diver tender"
+  },
+  {
+    "id": "wkr_0003",
+    "contractor_id": "ctr_deepline",
+    "full_name": "Yuki Soto",
+    "role": "Dive supervisor"
+  },
+  {
+    "id": "wkr_0005",
+    "contractor_id": "ctr_deepline",
+    "full_name": "Rory Holm",
+    "role": "Diver tender"
+  },
+  {
+    "id": "wkr_0007",
+    "contractor_id": "ctr_deepline",
+    "full_name": "Elena Nilsen",
+    "role": "Commercial diver"
+  },
+  {
+    "id": "wkr_0009",
+    "contractor_id": "ctr_deepline",
+    "full_name": "Nadia Berg",
+    "role": "Diver tender"
+  },
+  {
+    "id": "wkr_0011",
+    "contractor_id": "ctr_deepline",
+    "full_name": "Yuki Lindqvist",
+    "role": "Commercial diver"
+  },
+  {
+    "id": "wkr_0013",
+    "contractor_id": "ctr_deepline",
+    "full_name": "Magnus Okafor",
+    "role": "Dive supervisor"
+  },
+  {
+    "id": "wkr_0015",
+    "contractor_id": "ctr_deepline",
+    "full_name": "Hana Lindqvist",
+    "role": "Commercial diver"
+  },
+  {
+    "id": "wkr_0017",
+    "contractor_id": "ctr_deepline",
+    "full_name": "Pablo Rojas",
+    "role": "Commercial diver"
+  },
+  {
+    "id": "wkr_0019",
+    "contractor_id": "ctr_deepline",
+    "full_name": "Marta Duarte",
+    "role": "Commercial diver"
+  },
+  {
+    "id": "wkr_0021",
+    "contractor_id": "ctr_deepline",
+    "full_name": "Lars Soto",
+    "role": "Dive supervisor"
+  },
+  {
+    "id": "wkr_0097",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Ewan Lindqvist",
+    "role": "Dispatcher"
+  },
+  {
+    "id": "wkr_0099",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Mei Tan",
+    "role": "Forklift operator"
+  },
+  {
+    "id": "wkr_0101",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Diego Quinn",
+    "role": "Driver"
+  },
+  {
+    "id": "wkr_0103",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Freya Haugen",
+    "role": "Driver"
+  },
+  {
+    "id": "wkr_0105",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Aisha Rojas",
+    "role": "Driver"
+  },
+  {
+    "id": "wkr_0107",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Mateo Quinn",
+    "role": "Forklift operator"
+  },
+  {
+    "id": "wkr_0109",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Ingrid Moreno",
+    "role": "Dispatcher"
+  },
+  {
+    "id": "wkr_0111",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Carmen Berg",
+    "role": "Forklift operator"
+  },
+  {
+    "id": "wkr_0113",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Tomás Haugen",
+    "role": "Driver"
+  },
+  {
+    "id": "wkr_0115",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Jonas Vidal",
+    "role": "Forklift operator"
+  },
+  {
+    "id": "wkr_0117",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Yuki Holm",
+    "role": "Dispatcher"
+  },
+  {
+    "id": "wkr_0119",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Erik Haugen",
+    "role": "Dispatcher"
+  },
+  {
+    "id": "wkr_0121",
+    "contractor_id": "ctr_coastal",
+    "full_name": "Hana Bakke",
+    "role": "Dispatcher"
+  },
+  {
+    "id": "wkr_0189",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Callum Dahl",
+    "role": "Crew lead"
+  },
+  {
+    "id": "wkr_0191",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Carmen Reid",
+    "role": "Rigger"
+  },
+  {
+    "id": "wkr_0193",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Priya Berg",
+    "role": "Crew lead"
+  },
+  {
+    "id": "wkr_0195",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Carmen Pereira",
+    "role": "Net technician"
+  },
+  {
+    "id": "wkr_0197",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Freya Strand",
+    "role": "Net technician"
+  },
+  {
+    "id": "wkr_0199",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Leila Duarte",
+    "role": "Net technician"
+  },
+  {
+    "id": "wkr_0201",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Finn Pereira",
+    "role": "Rigger"
+  },
+  {
+    "id": "wkr_0203",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Sigrid Cárcamo",
+    "role": "Rigger"
+  },
+  {
+    "id": "wkr_0205",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Owen Bakke",
+    "role": "Rigger"
+  },
+  {
+    "id": "wkr_0207",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Pablo Vargas",
+    "role": "Rigger"
+  },
+  {
+    "id": "wkr_0209",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Henrik Eriksen",
+    "role": "Crew lead"
+  },
+  {
+    "id": "wkr_0211",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Priya Bakke",
+    "role": "Crew lead"
+  },
+  {
+    "id": "wkr_0213",
+    "contractor_id": "ctr_netguard",
+    "full_name": "Mateo Berg",
+    "role": "Rigger"
+  },
+  {
+    "id": "wkr_0287",
+    "contractor_id": "ctr_harbour_table",
+    "full_name": "Erik MacLeod",
+    "role": "Kitchen assistant"
+  },
+  {
+    "id": "wkr_0289",
+    "contractor_id": "ctr_harbour_table",
+    "full_name": "Kai Haugen",
+    "role": "Cook"
+  },
+  {
+    "id": "wkr_0291",
+    "contractor_id": "ctr_harbour_table",
+    "full_name": "Henrik Cárcamo",
+    "role": "Cook"
+  },
+  {
+    "id": "wkr_0293",
+    "contractor_id": "ctr_harbour_table",
+    "full_name": "Lucía Lindqvist",
+    "role": "Cook"
+  },
+  {
+    "id": "wkr_0295",
+    "contractor_id": "ctr_harbour_table",
+    "full_name": "Sigrid Rojas",
+    "role": "Kitchen assistant"
+  },
+  {
+    "id": "wkr_0297",
+    "contractor_id": "ctr_harbour_table",
+    "full_name": "Mei Haugen",
+    "role": "Cook"
+  },
+  {
+    "id": "wkr_0299",
+    "contractor_id": "ctr_harbour_table",
+    "full_name": "Aisha Holm",
+    "role": "Cook"
+  },
+  {
+    "id": "wkr_0301",
+    "contractor_id": "ctr_harbour_table",
+    "full_name": "Kai Lindqvist",
+    "role": "Cook"
+  },
+  {
+    "id": "wkr_0303",
+    "contractor_id": "ctr_harbour_table",
+    "full_name": "Isla Quinn",
+    "role": "Kitchen assistant"
+  },
+  {
+    "id": "wkr_0352",
+    "contractor_id": "ctr_sentinel",
+    "full_name": "Callum Cárcamo",
+    "role": "Security officer"
+  },
+  {
+    "id": "wkr_0354",
+    "contractor_id": "ctr_sentinel",
+    "full_name": "Astrid Berg",
+    "role": "Shift supervisor"
+  },
+  {
+    "id": "wkr_0356",
+    "contractor_id": "ctr_sentinel",
+    "full_name": "Erik Campbell",
+    "role": "Security officer"
+  },
+  {
+    "id": "wkr_0358",
+    "contractor_id": "ctr_sentinel",
+    "full_name": "Ewan Strand",
+    "role": "Security officer"
+  },
+  {
+    "id": "wkr_0360",
+    "contractor_id": "ctr_sentinel",
+    "full_name": "Mei Okafor",
+    "role": "Security officer"
+  },
+  {
+    "id": "wkr_0362",
+    "contractor_id": "ctr_sentinel",
+    "full_name": "Marta Strand",
+    "role": "Security officer"
+  },
+  {
+    "id": "wkr_0364",
+    "contractor_id": "ctr_sentinel",
+    "full_name": "Jonas Reid",
+    "role": "Security officer"
+  },
+  {
+    "id": "wkr_0366",
+    "contractor_id": "ctr_sentinel",
+    "full_name": "Mei Campbell",
+    "role": "Shift supervisor"
+  },
+  {
+    "id": "wkr_0368",
+    "contractor_id": "ctr_sentinel",
+    "full_name": "Zara Campbell",
+    "role": "Security officer"
+  },
+  {
+    "id": "wkr_0370",
+    "contractor_id": "ctr_sentinel",
+    "full_name": "Leila Berg",
+    "role": "Shift supervisor"
+  },
+  {
+    "id": "wkr_0429",
+    "contractor_id": "ctr_volta",
+    "full_name": "Bjørn Johansen",
+    "role": "Electrician"
+  },
+  {
+    "id": "wkr_0431",
+    "contractor_id": "ctr_volta",
+    "full_name": "Anders Eriksen",
+    "role": "Apprentice electrician"
+  },
+  {
+    "id": "wkr_0433",
+    "contractor_id": "ctr_volta",
+    "full_name": "Aisha Campbell",
+    "role": "Apprentice electrician"
+  },
+  {
+    "id": "wkr_0435",
+    "contractor_id": "ctr_volta",
+    "full_name": "Sofía Soto",
+    "role": "Apprentice electrician"
+  },
+  {
+    "id": "wkr_0437",
+    "contractor_id": "ctr_volta",
+    "full_name": "Lars Moreno",
+    "role": "Electrician"
+  },
+  {
+    "id": "wkr_0439",
+    "contractor_id": "ctr_volta",
+    "full_name": "Aisha Solberg",
+    "role": "Electrician"
+  },
+  {
+    "id": "wkr_0441",
+    "contractor_id": "ctr_volta",
+    "full_name": "Callum Reid",
+    "role": "Electrician"
+  },
+  {
+    "id": "wkr_0443",
+    "contractor_id": "ctr_volta",
+    "full_name": "Priya Rojas",
+    "role": "Apprentice electrician"
+  },
+  {
+    "id": "wkr_0445",
+    "contractor_id": "ctr_volta",
+    "full_name": "Oskar Soto",
+    "role": "Apprentice electrician"
+  },
+  {
+    "id": "wkr_0493",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Freya Bakke",
+    "role": "Deckhand"
+  },
+  {
+    "id": "wkr_0495",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Leila Rojas",
+    "role": "Boat master"
+  },
+  {
+    "id": "wkr_0497",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Mei Nilsen",
+    "role": "Deckhand"
+  },
+  {
+    "id": "wkr_0499",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Lucía Moreno",
+    "role": "Boat master"
+  },
+  {
+    "id": "wkr_0501",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Isla Navarro",
+    "role": "Deckhand"
+  },
+  {
+    "id": "wkr_0503",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Yuki Dahl",
+    "role": "Boat master"
+  },
+  {
+    "id": "wkr_0505",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Owen Pereira",
+    "role": "Boat master"
+  },
+  {
+    "id": "wkr_0507",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Ingrid Soto",
+    "role": "Boat master"
+  },
+  {
+    "id": "wkr_0509",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Pablo Dahl",
+    "role": "Boat master"
+  },
+  {
+    "id": "wkr_0511",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Erik Holm",
+    "role": "Deckhand"
+  },
+  {
+    "id": "wkr_0513",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Carmen Cárcamo",
+    "role": "Boat master"
+  },
+  {
+    "id": "wkr_0515",
+    "contractor_id": "ctr_skerry",
+    "full_name": "Ewan Navarro",
+    "role": "Boat master"
+  },
+  {
+    "id": "wkr_0586",
+    "contractor_id": "ctr_brightwave",
+    "full_name": "Erik Soto",
+    "role": "Sanitation lead"
+  },
+  {
+    "id": "wkr_0588",
+    "contractor_id": "ctr_brightwave",
+    "full_name": "Diego Lindqvist",
+    "role": "Cleaner"
+  },
+  {
+    "id": "wkr_0590",
+    "contractor_id": "ctr_brightwave",
+    "full_name": "Ewan Berg",
+    "role": "Cleaner"
+  },
+  {
+    "id": "wkr_0592",
+    "contractor_id": "ctr_brightwave",
+    "full_name": "Aisha Lindqvist",
+    "role": "Sanitation lead"
+  },
+  {
+    "id": "wkr_0594",
+    "contractor_id": "ctr_brightwave",
+    "full_name": "Tomás Solberg",
+    "role": "Sanitation lead"
+  },
+  {
+    "id": "wkr_0596",
+    "contractor_id": "ctr_brightwave",
+    "full_name": "Mei Quinn",
+    "role": "Cleaner"
+  },
+  {
+    "id": "wkr_0598",
+    "contractor_id": "ctr_brightwave",
+    "full_name": "Owen Duarte",
+    "role": "Sanitation lead"
+  },
+  {
+    "id": "wkr_0600",
+    "contractor_id": "ctr_brightwave",
+    "full_name": "Aisha Soto",
+    "role": "Cleaner"
+  },
+  {
+    "id": "wkr_0602",
+    "contractor_id": "ctr_brightwave",
+    "full_name": "Sofía Okafor",
+    "role": "Cleaner"
+  },
+  {
+    "id": "wkr_0604",
+    "contractor_id": "ctr_brightwave",
+    "full_name": "Magnus Rojas",
+    "role": "Sanitation lead"
+  },
+  {
+    "id": "wkr_0606",
+    "contractor_id": "ctr_brightwave",
+    "full_name": "Yuki Vidal",
+    "role": "Sanitation lead"
+  }
+]

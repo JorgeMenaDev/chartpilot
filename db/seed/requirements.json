@@ -1,0 +1,200 @@
+[
+  {
+    "id": "req_liability",
+    "title": "Public liability insurance",
+    "scope": "company",
+    "service": null,
+    "renewal_months": 12,
+    "priority_tier": 2,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_employers",
+    "title": "Employers' liability insurance",
+    "scope": "company",
+    "service": null,
+    "renewal_months": 12,
+    "priority_tier": 2,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_payroll",
+    "title": "Payroll & social security certificate",
+    "scope": "company",
+    "service": null,
+    "renewal_months": 1,
+    "priority_tier": 1,
+    "labour_obligation": true
+  },
+  {
+    "id": "req_safety_plan",
+    "title": "Health & safety plan",
+    "scope": "company",
+    "service": null,
+    "renewal_months": 12,
+    "priority_tier": 3,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_risk",
+    "title": "Site risk assessment",
+    "scope": "company",
+    "service": null,
+    "renewal_months": 6,
+    "priority_tier": 3,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_service_contract",
+    "title": "Signed service contract",
+    "scope": "company",
+    "service": null,
+    "renewal_months": null,
+    "priority_tier": 4,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_vessel",
+    "title": "Vessel seaworthiness certificate",
+    "scope": "company",
+    "service": "boat_transport",
+    "renewal_months": 12,
+    "priority_tier": 1,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_food_licence",
+    "title": "Food business licence",
+    "scope": "company",
+    "service": "catering",
+    "renewal_months": 12,
+    "priority_tier": 2,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_dive_plan",
+    "title": "Diving operations plan",
+    "scope": "company",
+    "service": "diving",
+    "renewal_months": 6,
+    "priority_tier": 1,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_employment",
+    "title": "Employment contract",
+    "scope": "worker",
+    "service": null,
+    "renewal_months": null,
+    "priority_tier": 2,
+    "labour_obligation": true
+  },
+  {
+    "id": "req_induction",
+    "title": "Site safety induction",
+    "scope": "worker",
+    "service": null,
+    "renewal_months": 12,
+    "priority_tier": 3,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_medical",
+    "title": "Occupational medical exam",
+    "scope": "worker",
+    "service": null,
+    "renewal_months": 12,
+    "priority_tier": 2,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_right_to_work",
+    "title": "Right-to-work check",
+    "scope": "worker",
+    "service": null,
+    "renewal_months": null,
+    "priority_tier": 4,
+    "labour_obligation": true
+  },
+  {
+    "id": "req_diver_cert",
+    "title": "Commercial diver certificate",
+    "scope": "worker",
+    "service": "diving",
+    "renewal_months": 24,
+    "priority_tier": 1,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_dive_medical",
+    "title": "Diving medical fitness",
+    "scope": "worker",
+    "service": "diving",
+    "renewal_months": 12,
+    "priority_tier": 1,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_electrical",
+    "title": "Electrical competence licence",
+    "scope": "worker",
+    "service": "electrical",
+    "renewal_months": 36,
+    "priority_tier": 1,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_boat_master",
+    "title": "Boat master licence",
+    "scope": "worker",
+    "service": "boat_transport",
+    "renewal_months": 24,
+    "priority_tier": 1,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_food_hygiene",
+    "title": "Food hygiene certificate",
+    "scope": "worker",
+    "service": "catering",
+    "renewal_months": 24,
+    "priority_tier": 3,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_security",
+    "title": "Security guard licence",
+    "scope": "worker",
+    "service": "security",
+    "renewal_months": 12,
+    "priority_tier": 2,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_rigging",
+    "title": "Working at height & rigging",
+    "scope": "worker",
+    "service": "net_maintenance",
+    "renewal_months": 24,
+    "priority_tier": 2,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_forklift",
+    "title": "Forklift operator certificate",
+    "scope": "worker",
+    "service": "logistics",
+    "renewal_months": 36,
+    "priority_tier": 3,
+    "labour_obligation": false
+  },
+  {
+    "id": "req_chemical",
+    "title": "Chemical handling training",
+    "scope": "worker",
+    "service": "cleaning",
+    "renewal_months": 24,
+    "priority_tier": 3,
+    "labour_obligation": false
+  }
+]

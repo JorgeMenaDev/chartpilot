@@ -134,6 +134,8 @@
     --color-message-action-hover: var(--message-action-hover);
     --color-secondary-label: var(--secondary-label);
     --color-icon-muted: var(--icon-muted);
+    --color-success: var(--success);
+    --color-warning: var(--warning);
     --shadow-composer: 0 12px 28px -18px rgb(0 0 0 / 40%);
 }
 .dark {
@@ -158,6 +160,9 @@
     --message-action: #346bf1;
     --message-action-foreground: #ffffff;
     --message-action-hover: color-mix(in srgb, #346bf1 88%, white);
+    /* Status colours for Visualize widgets, as in the HTML visuals' theme (lib/html-render.ts). */
+    --success: #10b981;
+    --warning: #fe9a00;
 }
 
 @utility dropdown-glass {

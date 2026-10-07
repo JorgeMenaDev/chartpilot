@@ -1,0 +1,26 @@
+[
+  {
+    "id": "site_fjord_point",
+    "client_company_id": "sfs",
+    "name": "Fjord Point Farm",
+    "region": "Outer Fjord"
+  },
+  {
+    "id": "site_cormorant_bay",
+    "client_company_id": "sfs",
+    "name": "Cormorant Bay Farm",
+    "region": "Outer Fjord"
+  },
+  {
+    "id": "site_skerry_sound",
+    "client_company_id": "sfs",
+    "name": "Skerry Sound Farm",
+    "region": "North Sound"
+  },
+  {
+    "id": "site_harbour_plant",
+    "client_company_id": "sfs",
+    "name": "Harbour Processing Plant",
+    "region": "Port Ansel"
+  }
+]

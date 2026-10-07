@@ -1,0 +1,706 @@
+[
+  {
+    "id": "asg_0002",
+    "worker_id": "wkr_0001",
+    "contract_id": "con_deepline_1",
+    "status": "active",
+    "started_on": "2025-05-03",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0004",
+    "worker_id": "wkr_0003",
+    "contract_id": "con_deepline_2",
+    "status": "active",
+    "started_on": "2025-01-04",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0006",
+    "worker_id": "wkr_0005",
+    "contract_id": "con_deepline_1",
+    "status": "active",
+    "started_on": "2025-12-13",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0008",
+    "worker_id": "wkr_0007",
+    "contract_id": "con_deepline_2",
+    "status": "active",
+    "started_on": "2024-12-22",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0010",
+    "worker_id": "wkr_0009",
+    "contract_id": "con_deepline_1",
+    "status": "active",
+    "started_on": "2025-09-02",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0012",
+    "worker_id": "wkr_0011",
+    "contract_id": "con_deepline_2",
+    "status": "active",
+    "started_on": "2025-03-27",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0014",
+    "worker_id": "wkr_0013",
+    "contract_id": "con_deepline_1",
+    "status": "active",
+    "started_on": "2025-01-03",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0016",
+    "worker_id": "wkr_0015",
+    "contract_id": "con_deepline_2",
+    "status": "active",
+    "started_on": "2026-06-28",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0018",
+    "worker_id": "wkr_0017",
+    "contract_id": "con_deepline_1",
+    "status": "active",
+    "started_on": "2025-09-29",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0020",
+    "worker_id": "wkr_0019",
+    "contract_id": "con_deepline_2",
+    "status": "active",
+    "started_on": "2025-10-31",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0022",
+    "worker_id": "wkr_0021",
+    "contract_id": "con_deepline_1",
+    "status": "ended",
+    "started_on": "2025-05-25",
+    "ended_on": "2026-06-28"
+  },
+  {
+    "id": "asg_0098",
+    "worker_id": "wkr_0097",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2026-07-06",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0100",
+    "worker_id": "wkr_0099",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2025-01-30",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0102",
+    "worker_id": "wkr_0101",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2026-06-14",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0104",
+    "worker_id": "wkr_0103",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2025-09-26",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0106",
+    "worker_id": "wkr_0105",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2026-07-30",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0108",
+    "worker_id": "wkr_0107",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2026-05-22",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0110",
+    "worker_id": "wkr_0109",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2026-04-05",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0112",
+    "worker_id": "wkr_0111",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2025-02-01",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0114",
+    "worker_id": "wkr_0113",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2024-12-29",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0116",
+    "worker_id": "wkr_0115",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2025-01-23",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0118",
+    "worker_id": "wkr_0117",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2025-11-03",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0120",
+    "worker_id": "wkr_0119",
+    "contract_id": "con_coastal_1",
+    "status": "active",
+    "started_on": "2026-03-17",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0122",
+    "worker_id": "wkr_0121",
+    "contract_id": "con_coastal_1",
+    "status": "ended",
+    "started_on": "2025-05-25",
+    "ended_on": "2026-04-05"
+  },
+  {
+    "id": "asg_0190",
+    "worker_id": "wkr_0189",
+    "contract_id": "con_netguard_1",
+    "status": "active",
+    "started_on": "2025-06-10",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0192",
+    "worker_id": "wkr_0191",
+    "contract_id": "con_netguard_2",
+    "status": "active",
+    "started_on": "2026-03-18",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0194",
+    "worker_id": "wkr_0193",
+    "contract_id": "con_netguard_1",
+    "status": "active",
+    "started_on": "2026-07-04",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0196",
+    "worker_id": "wkr_0195",
+    "contract_id": "con_netguard_2",
+    "status": "active",
+    "started_on": "2026-03-13",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0198",
+    "worker_id": "wkr_0197",
+    "contract_id": "con_netguard_1",
+    "status": "active",
+    "started_on": "2025-07-26",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0200",
+    "worker_id": "wkr_0199",
+    "contract_id": "con_netguard_2",
+    "status": "active",
+    "started_on": "2026-03-23",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0202",
+    "worker_id": "wkr_0201",
+    "contract_id": "con_netguard_1",
+    "status": "active",
+    "started_on": "2026-06-18",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0204",
+    "worker_id": "wkr_0203",
+    "contract_id": "con_netguard_2",
+    "status": "active",
+    "started_on": "2025-07-13",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0206",
+    "worker_id": "wkr_0205",
+    "contract_id": "con_netguard_1",
+    "status": "active",
+    "started_on": "2025-01-20",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0208",
+    "worker_id": "wkr_0207",
+    "contract_id": "con_netguard_2",
+    "status": "active",
+    "started_on": "2026-06-07",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0210",
+    "worker_id": "wkr_0209",
+    "contract_id": "con_netguard_1",
+    "status": "active",
+    "started_on": "2026-03-30",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0212",
+    "worker_id": "wkr_0211",
+    "contract_id": "con_netguard_2",
+    "status": "active",
+    "started_on": "2025-12-23",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0214",
+    "worker_id": "wkr_0213",
+    "contract_id": "con_netguard_1",
+    "status": "ended",
+    "started_on": "2025-05-25",
+    "ended_on": "2026-06-22"
+  },
+  {
+    "id": "asg_0288",
+    "worker_id": "wkr_0287",
+    "contract_id": "con_harbour_table_1",
+    "status": "active",
+    "started_on": "2025-10-09",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0290",
+    "worker_id": "wkr_0289",
+    "contract_id": "con_harbour_table_1",
+    "status": "active",
+    "started_on": "2025-09-18",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0292",
+    "worker_id": "wkr_0291",
+    "contract_id": "con_harbour_table_1",
+    "status": "active",
+    "started_on": "2024-12-08",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0294",
+    "worker_id": "wkr_0293",
+    "contract_id": "con_harbour_table_1",
+    "status": "active",
+    "started_on": "2026-06-14",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0296",
+    "worker_id": "wkr_0295",
+    "contract_id": "con_harbour_table_1",
+    "status": "active",
+    "started_on": "2026-03-18",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0298",
+    "worker_id": "wkr_0297",
+    "contract_id": "con_harbour_table_1",
+    "status": "active",
+    "started_on": "2026-01-18",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0300",
+    "worker_id": "wkr_0299",
+    "contract_id": "con_harbour_table_1",
+    "status": "active",
+    "started_on": "2025-09-07",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0302",
+    "worker_id": "wkr_0301",
+    "contract_id": "con_harbour_table_1",
+    "status": "active",
+    "started_on": "2025-10-31",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0304",
+    "worker_id": "wkr_0303",
+    "contract_id": "con_harbour_table_1",
+    "status": "ended",
+    "started_on": "2025-05-25",
+    "ended_on": "2026-08-04"
+  },
+  {
+    "id": "asg_0353",
+    "worker_id": "wkr_0352",
+    "contract_id": "con_sentinel_1",
+    "status": "active",
+    "started_on": "2025-01-05",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0355",
+    "worker_id": "wkr_0354",
+    "contract_id": "con_sentinel_2",
+    "status": "active",
+    "started_on": "2025-02-11",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0357",
+    "worker_id": "wkr_0356",
+    "contract_id": "con_sentinel_1",
+    "status": "active",
+    "started_on": "2024-11-25",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0359",
+    "worker_id": "wkr_0358",
+    "contract_id": "con_sentinel_2",
+    "status": "active",
+    "started_on": "2026-06-21",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0361",
+    "worker_id": "wkr_0360",
+    "contract_id": "con_sentinel_1",
+    "status": "active",
+    "started_on": "2026-03-05",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0363",
+    "worker_id": "wkr_0362",
+    "contract_id": "con_sentinel_2",
+    "status": "active",
+    "started_on": "2025-06-26",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0365",
+    "worker_id": "wkr_0364",
+    "contract_id": "con_sentinel_1",
+    "status": "active",
+    "started_on": "2026-01-24",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0367",
+    "worker_id": "wkr_0366",
+    "contract_id": "con_sentinel_2",
+    "status": "active",
+    "started_on": "2025-02-25",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0369",
+    "worker_id": "wkr_0368",
+    "contract_id": "con_sentinel_1",
+    "status": "active",
+    "started_on": "2026-08-16",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0371",
+    "worker_id": "wkr_0370",
+    "contract_id": "con_sentinel_1",
+    "status": "ended",
+    "started_on": "2025-05-25",
+    "ended_on": "2026-04-24"
+  },
+  {
+    "id": "asg_0430",
+    "worker_id": "wkr_0429",
+    "contract_id": "con_volta_1",
+    "status": "active",
+    "started_on": "2025-02-06",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0432",
+    "worker_id": "wkr_0431",
+    "contract_id": "con_volta_1",
+    "status": "active",
+    "started_on": "2026-04-13",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0434",
+    "worker_id": "wkr_0433",
+    "contract_id": "con_volta_1",
+    "status": "active",
+    "started_on": "2025-07-06",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0436",
+    "worker_id": "wkr_0435",
+    "contract_id": "con_volta_1",
+    "status": "active",
+    "started_on": "2026-05-23",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0438",
+    "worker_id": "wkr_0437",
+    "contract_id": "con_volta_1",
+    "status": "active",
+    "started_on": "2025-01-09",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0440",
+    "worker_id": "wkr_0439",
+    "contract_id": "con_volta_1",
+    "status": "active",
+    "started_on": "2026-02-25",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0442",
+    "worker_id": "wkr_0441",
+    "contract_id": "con_volta_1",
+    "status": "active",
+    "started_on": "2025-10-02",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0444",
+    "worker_id": "wkr_0443",
+    "contract_id": "con_volta_1",
+    "status": "active",
+    "started_on": "2026-06-09",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0446",
+    "worker_id": "wkr_0445",
+    "contract_id": "con_volta_1",
+    "status": "ended",
+    "started_on": "2025-05-25",
+    "ended_on": "2026-08-03"
+  },
+  {
+    "id": "asg_0494",
+    "worker_id": "wkr_0493",
+    "contract_id": "con_skerry_1",
+    "status": "active",
+    "started_on": "2024-11-25",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0496",
+    "worker_id": "wkr_0495",
+    "contract_id": "con_skerry_2",
+    "status": "active",
+    "started_on": "2025-10-17",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0498",
+    "worker_id": "wkr_0497",
+    "contract_id": "con_skerry_1",
+    "status": "active",
+    "started_on": "2025-04-23",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0500",
+    "worker_id": "wkr_0499",
+    "contract_id": "con_skerry_2",
+    "status": "active",
+    "started_on": "2025-04-16",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0502",
+    "worker_id": "wkr_0501",
+    "contract_id": "con_skerry_1",
+    "status": "active",
+    "started_on": "2026-06-16",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0504",
+    "worker_id": "wkr_0503",
+    "contract_id": "con_skerry_2",
+    "status": "active",
+    "started_on": "2025-07-01",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0506",
+    "worker_id": "wkr_0505",
+    "contract_id": "con_skerry_1",
+    "status": "active",
+    "started_on": "2025-09-09",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0508",
+    "worker_id": "wkr_0507",
+    "contract_id": "con_skerry_2",
+    "status": "active",
+    "started_on": "2025-08-01",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0510",
+    "worker_id": "wkr_0509",
+    "contract_id": "con_skerry_1",
+    "status": "active",
+    "started_on": "2025-04-24",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0512",
+    "worker_id": "wkr_0511",
+    "contract_id": "con_skerry_2",
+    "status": "active",
+    "started_on": "2025-03-04",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0514",
+    "worker_id": "wkr_0513",
+    "contract_id": "con_skerry_1",
+    "status": "active",
+    "started_on": "2025-08-25",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0516",
+    "worker_id": "wkr_0515",
+    "contract_id": "con_skerry_1",
+    "status": "ended",
+    "started_on": "2025-05-25",
+    "ended_on": "2026-08-19"
+  },
+  {
+    "id": "asg_0587",
+    "worker_id": "wkr_0586",
+    "contract_id": "con_brightwave_1",
+    "status": "active",
+    "started_on": "2026-04-05",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0589",
+    "worker_id": "wkr_0588",
+    "contract_id": "con_brightwave_1",
+    "status": "active",
+    "started_on": "2026-02-06",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0591",
+    "worker_id": "wkr_0590",
+    "contract_id": "con_brightwave_1",
+    "status": "active",
+    "started_on": "2026-06-02",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0593",
+    "worker_id": "wkr_0592",
+    "contract_id": "con_brightwave_1",
+    "status": "active",
+    "started_on": "2026-07-17",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0595",
+    "worker_id": "wkr_0594",
+    "contract_id": "con_brightwave_1",
+    "status": "active",
+    "started_on": "2024-12-07",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0597",
+    "worker_id": "wkr_0596",
+    "contract_id": "con_brightwave_1",
+    "status": "active",
+    "started_on": "2025-02-15",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0599",
+    "worker_id": "wkr_0598",
+    "contract_id": "con_brightwave_1",
+    "status": "active",
+    "started_on": "2025-08-09",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0601",
+    "worker_id": "wkr_0600",
+    "contract_id": "con_brightwave_1",
+    "status": "active",
+    "started_on": "2026-01-24",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0603",
+    "worker_id": "wkr_0602",
+    "contract_id": "con_brightwave_1",
+    "status": "active",
+    "started_on": "2024-11-25",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0605",
+    "worker_id": "wkr_0604",
+    "contract_id": "con_brightwave_1",
+    "status": "active",
+    "started_on": "2026-07-27",
+    "ended_on": null
+  },
+  {
+    "id": "asg_0607",
+    "worker_id": "wkr_0606",
+    "contract_id": "con_brightwave_1",
+    "status": "ended",
+    "started_on": "2025-05-25",
+    "ended_on": "2026-05-12"
+  }
+]

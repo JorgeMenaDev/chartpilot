@@ -11,13 +11,13 @@ import { Popover } from "@base-ui/react/popover";
 import { BrainIcon, CheckIcon, ChevronDownIcon, LockIcon, SearchIcon } from "lucide-react";
 import { useState, type ComponentProps } from "react";
 import { cn } from "@/lib/utils";
-import type { ReasoningEffort } from "@/lib/copilot";
-import type { ModelOption } from "@/lib/models";
+import type { ModelChoice, ReasoningEffort } from "@/lib/copilot";
+import type { ModelCatalog, ModelOption } from "@/lib/models";
 
 const controlClassName =
   "relative inline-flex h-7 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-(--control-radius) border border-transparent px-2.5 font-medium text-base text-secondary-label outline-none hover:bg-accent hover:text-foreground data-popup-open:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-64 sm:text-sm [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='text-'])]:text-muted-foreground [&_svg:not([class*='size-'])]:size-4";
 
-const popupClassName =
+export const popupClassName =
   "dropdown-glass relative flex origin-(--transform-origin) rounded-lg shadow-[0_18px_44px_-18px_rgb(0_0_0/80%)] outline-none transition-[opacity,scale] data-ending-style:scale-98 data-ending-style:opacity-0 data-starting-style:scale-98 data-starting-style:opacity-0";
 
 function Chevron() {
@@ -211,5 +211,36 @@ export function SendButton(props: { disabled: boolean }) {
         <path d="M7 11.5V2.5M7 2.5L3 6.5M7 2.5L11 6.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </button>
+  );
+}
+
+/** The model picker, plus the effort picker when the model has levels. */
+export function ModelControls(props: {
+  catalog: ModelCatalog;
+  choice: ModelChoice;
+  onModel: (id: string) => void;
+  onEffort: (effort: ReasoningEffort) => void;
+  disabled: boolean;
+}) {
+  const model = props.catalog.models.find((m) => m.id === props.choice.model);
+  return (
+    <>
+      <ModelPicker models={props.catalog.models} value={props.choice.model} onChange={props.onModel} disabled={props.disabled} />
+      {model && model.efforts.length > 0 && (
+        <>
+          <ControlSeparator />
+          <EffortPicker
+            efforts={model.efforts}
+            defaultEffort={model.defaultEffort}
+            value={props.choice.effort}
+            onChange={props.onEffort}
+            disabled={props.disabled}
+            {...(props.catalog.autoOnly
+              ? { note: "On Copilot Free, Auto runs a model without reasoning, so effort has no effect." }
+              : {})}
+          />
+        </>
+      )}
+    </>
   );
 }
