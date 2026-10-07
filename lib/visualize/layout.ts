@@ -2,7 +2,9 @@
 // order, and any size the user picked by hand. The figures are never
 // stored; `hydrate` refills every widget from the current candidates.
 import type { Experimental_CompositionCandidate, Spec, UIElement } from "@json-render/core";
-import type { Size } from "./catalog";
+import { z } from "zod";
+import { MAX_ELEMENTS } from "./candidates";
+import { sizes, type Size } from "./catalog";
 
 export type LayoutElement = {
   id: string;
@@ -13,6 +15,38 @@ export type LayoutElement = {
 };
 
 export type Layout = { root: string; elements: LayoutElement[] };
+
+const elementId = z.string().min(1).max(64);
+
+/**
+ * A layout from outside our code (a request body, localStorage), bounded so
+ * it can't grow a model prompt: at most MAX_ELEMENTS elements, each widget
+ * once, unique ids, a root that exists and children that point at elements.
+ */
+export const layoutSchema = z
+  .object({
+    root: elementId,
+    elements: z
+      .array(
+        z.object({
+          id: elementId,
+          widget: z.string().min(1).max(80),
+          children: z.array(elementId).max(MAX_ELEMENTS),
+          size: z.enum(sizes).optional(),
+        }),
+      )
+      .min(1)
+      .max(MAX_ELEMENTS),
+  })
+  .superRefine(({ root, elements }, ctx) => {
+    const ids = new Set(elements.map((element) => element.id));
+    if (ids.size !== elements.length) ctx.addIssue({ code: "custom", message: "Duplicate element ids" });
+    if (new Set(elements.map((element) => element.widget)).size !== elements.length)
+      ctx.addIssue({ code: "custom", message: "A widget appears twice" });
+    if (!ids.has(root)) ctx.addIssue({ code: "custom", message: "The root is not an element" });
+    if (elements.some((element) => element.children.some((child) => !ids.has(child))))
+      ctx.addIssue({ code: "custom", message: "A child is not an element" });
+  }) satisfies z.ZodType<Layout>;
 
 // Every widget names itself in `widget`; only the Page has none.
 const widgetOf = (element: UIElement) => (typeof element.props.widget === "string" ? element.props.widget : "page");

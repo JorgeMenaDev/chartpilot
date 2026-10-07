@@ -57,6 +57,17 @@ import {
 } from "@/lib/visualize/candidates";
 import type { Drill, Size } from "@/lib/visualize/catalog";
 import { hydrate, sizeOverrides, type Layout } from "@/lib/visualize/layout";
+import {
+  emptyLibrary,
+  LIBRARY_KEY,
+  MAX_HISTORY,
+  MAX_NAME,
+  MAX_PROMPTS,
+  parseLibrary,
+  serializeLibrary,
+  type Library,
+  type Visualization,
+} from "@/lib/visualize/library";
 import { DrillContext, registry, WidgetControlsContext, type WidgetControls } from "./registry";
 
 const starters = [
@@ -68,83 +79,81 @@ const starters = [
   "Heatmap of documents by contractor",
 ];
 
-/** A saved visualization or a history entry, as kept in this browser. */
-type Visualization = Layout & {
-  id: string;
-  name: string;
-  prompts: string[];
-  companyId: string | null;
-  updatedAt: number;
-};
-
 // What the page is showing: an unsaved draft or a saved visualization.
 type Draft = {
   layout: Layout;
   companyId: string | null;
   prompts: string[];
-  saved: { id: string; name: string; layout: Layout } | null;
+  // As last saved, to tell when the draft has changes.
+  saved: ({ id: string; name: string } & Snapshot) | null;
   // This conversation's entry in the history, once recorded.
   historyId: string | null;
 };
 
-// What a history entry records; unchanged drafts are not recorded again.
-const snapshotOf = (draft: Draft) => JSON.stringify([draft.layout, draft.companyId, draft.prompts]);
+// What a visualization keeps: its layout, contractor scope and requests.
+type Snapshot = Pick<Draft, "layout" | "companyId" | "prompts">;
 
-const sameLayout = (left: Layout, right: Layout) => JSON.stringify(left) === JSON.stringify(right);
-
-const LIBRARY_KEY = "chartpilot:visualizations";
-const MAX_NAME = 80;
-// History entries kept; older ones are dropped.
-const MAX_HISTORY = 30;
-
-type Library = { saved: Visualization[]; history: Visualization[] };
+// Unchanged drafts are not recorded or saved again.
+const snapshotOf = ({ layout, companyId, prompts }: Snapshot) => JSON.stringify([layout, companyId, prompts]);
 
 /**
  * Saved visualizations and the history of generations, in localStorage:
- * there is no database. Both lists are newest first.
+ * there is no database. A write that fails (storage full or turned off)
+ * leaves the lists as they were and sets `storageFailed`.
  */
 function useLibrary() {
-  const [library, setLibrary] = useState<Library>({ saved: [], history: [] });
+  const [library, setLibrary] = useState<Library>(emptyLibrary);
+  const [storageFailed, setStorageFailed] = useState(false);
+  // The latest lists, so a write never builds on a stale render.
+  const latest = useRef(library);
   useEffect(() => {
+    let stored: string | null = null;
     try {
-      const stored = JSON.parse(localStorage.getItem(LIBRARY_KEY) ?? "null") as Library | null;
-      if (stored) setLibrary(stored);
+      stored = localStorage.getItem(LIBRARY_KEY);
     } catch {}
+    latest.current = parseLibrary(stored);
+    setLibrary(latest.current);
   }, []);
 
-  const commit = (change: (current: Library) => Library) =>
-    setLibrary((current) => {
-      const next = change(current);
-      localStorage.setItem(LIBRARY_KEY, JSON.stringify(next));
-      return next;
-    });
+  // Writes first and shows the lists only once they are stored.
+  const commit = (change: (current: Library) => Library) => {
+    const next = change(latest.current);
+    try {
+      localStorage.setItem(LIBRARY_KEY, serializeLibrary(next));
+    } catch {
+      setStorageFailed(true);
+      return false;
+    }
+    latest.current = next;
+    setLibrary(next);
+    setStorageFailed(false);
+    return true;
+  };
   const entry = (id: string, name: string, draft: Draft): Visualization => ({
     id,
     name: name.trim().slice(0, MAX_NAME),
-    prompts: draft.prompts.slice(-20),
+    prompts: draft.prompts.slice(-MAX_PROMPTS),
     companyId: draft.companyId,
-    root: draft.layout.root,
-    elements: draft.layout.elements,
+    layout: draft.layout,
     updatedAt: Date.now(),
   });
   const upsert = (list: Visualization[], item: Visualization) => [item, ...list.filter((other) => other.id !== item.id)];
 
   return {
     ...library,
-    /** Creates a visualization, or overwrites `id`. Returns its id. */
+    storageFailed,
+    /** Creates a visualization, or overwrites `id`. Returns its id, or null when it couldn't be stored. */
     save(draft: Draft, name: string, id = crypto.randomUUID()) {
-      commit((current) => ({ ...current, saved: upsert(current.saved, entry(id, name, draft)) }));
-      return id;
+      return commit((current) => ({ ...current, saved: upsert(current.saved, entry(id, name, draft)) })) ? id : null;
     },
     /** Records a generation: a new entry per conversation, updated as it is iterated. */
     record(draft: Draft) {
       const id = draft.historyId ?? crypto.randomUUID();
       const item = entry(id, draft.prompts[0] ?? "Visualization", draft);
-      commit((current) => ({ ...current, history: upsert(current.history, item).slice(0, MAX_HISTORY) }));
-      return id;
+      return commit((current) => ({ ...current, history: upsert(current.history, item).slice(0, MAX_HISTORY) })) ? id : null;
     },
     remove(id: string) {
-      commit((current) => ({
+      return commit((current) => ({
         saved: current.saved.filter((item) => item.id !== id),
         history: current.history.filter((item) => item.id !== id),
       }));
@@ -194,11 +203,11 @@ export function VisualizePage({ input }: { input: BuilderInput }) {
     if (snapshot === recorded.current) return;
     recorded.current = snapshot;
     const id = library.record(draft);
-    if (!draft.historyId) setDraft({ ...draft, historyId: id });
+    if (id && !draft.historyId) setDraft({ ...draft, historyId: id });
   }, [draft, composing, library]);
 
   const spec = draft ? hydrate(draft.layout, candidates) : null;
-  const dirty = draft ? !draft.saved || !sameLayout(draft.layout, draft.saved.layout) : false;
+  const dirty = draft ? !draft.saved || snapshotOf(draft) !== snapshotOf(draft.saved) : false;
 
   // Every change goes through here, so Undo can step back through it.
   function change(next: Draft | null) {
@@ -272,13 +281,13 @@ export function VisualizePage({ input }: { input: BuilderInput }) {
   // Opens a saved visualization, or a history entry to keep iterating on.
   // Either way the figures are refilled from the data, with no AI call.
   function open(visualization: Visualization, fromHistory = false) {
-    const layout = { root: visualization.root, elements: visualization.elements };
+    const { id, name, layout, companyId, prompts } = visualization;
     const next: Draft = {
       layout,
-      companyId: visualization.companyId,
-      prompts: visualization.prompts,
-      saved: fromHistory ? null : { id: visualization.id, name: visualization.name, layout },
-      historyId: fromHistory ? visualization.id : null,
+      companyId,
+      prompts,
+      saved: fromHistory ? null : { id, name, layout, companyId, prompts },
+      historyId: fromHistory ? id : null,
     };
     recorded.current = snapshotOf(next);
     setHistory([]);
@@ -300,11 +309,13 @@ export function VisualizePage({ input }: { input: BuilderInput }) {
   function save(name: string, asNew = false) {
     if (!draft || !name.trim()) return;
     const id = library.save(draft, name, asNew ? undefined : draft.saved?.id);
-    setDraft({ ...draft, saved: { id, name: name.trim().slice(0, MAX_NAME), layout: draft.layout } });
+    if (!id) return;
+    const { layout, companyId, prompts } = draft;
+    setDraft({ ...draft, saved: { id, name: name.trim().slice(0, MAX_NAME), layout, companyId, prompts } });
   }
 
   function remove(visualization: Visualization) {
-    library.remove(visualization.id);
+    if (!library.remove(visualization.id)) return;
     if (draft?.saved?.id === visualization.id) startOver();
     if (draft?.historyId === visualization.id) setDraft({ ...draft, historyId: null });
   }
@@ -357,6 +368,12 @@ export function VisualizePage({ input }: { input: BuilderInput }) {
     },
   };
 
+  const storageNotice = library.storageFailed ? (
+    <p className="text-sm text-warning">
+      Couldn't save to this browser, so Saved and History weren't updated. The dashboard still works.
+    </p>
+  ) : null;
+
   const composer = (
     <Composer
       inputRef={inputRef}
@@ -393,6 +410,7 @@ export function VisualizePage({ input }: { input: BuilderInput }) {
             {error ?? "I don't have data for that yet. Try one of these questions:"}
           </p>
         ) : null}
+        <div className="text-center">{storageNotice}</div>
         <div className="flex flex-wrap justify-center gap-2">
           {starters.map((starter) => (
             <button
@@ -444,6 +462,7 @@ export function VisualizePage({ input }: { input: BuilderInput }) {
         <SkeletonGrid />
       )}
       {error ? <p className="text-sm text-destructive">{error}</p> : null}
+      {storageNotice}
       <DrillPanel drill={drill} onClose={() => setDrill(null)} />
       <div className="fixed inset-x-0 bottom-0 z-20 bg-gradient-to-t from-background via-background/95 to-transparent pt-10 pb-6">
         <div className="mx-auto w-full max-w-3xl px-4">{composer}</div>
@@ -683,7 +702,7 @@ function describeEntry(item: Visualization) {
           ? relativeTime.format(Math.round(minutes / 60), "hour")
           : relativeTime.format(Math.round(minutes / (60 * 24)), "day");
   const asks = item.prompts.length;
-  const widgets = item.elements.length - 1;
+  const widgets = item.layout.elements.length - 1;
   return `${asks} ${asks === 1 ? "request" : "requests"} · ${widgets} ${widgets === 1 ? "widget" : "widgets"} · ${when}`;
 }
 
