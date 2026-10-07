@@ -203,7 +203,7 @@ export async function streamReply(login: string, token: string, messages: ChatMe
   });
 
   // While the model writes a page's HTML nothing else is sent for a minute or more,
-  // and mobile Safari drops a silent connection, so keep it warm.
+  // so keep the connection active for clients and proxies that drop silent streams.
   const heartbeat = setInterval(() => emit({ type: "ping" }), 10_000);
 
   void (async () => {

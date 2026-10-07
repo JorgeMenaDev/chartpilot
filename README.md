@@ -33,7 +33,7 @@ Browser ──device flow──▶ GitHub OAuth App ──▶ user token (gho_�
 - The server runs the [GitHub Copilot SDK](https://github.com/github/copilot-sdk), passing each user's token as `gitHubToken`, with `mode: "empty"` so no OS tools are exposed.
 - `html_preview` uses [`@sparticuz/chromium-min`](https://github.com/Sparticuz/chromium) on Vercel and your local Chrome in development. The screenshot goes back to the model as an image.
 - `html_render` streams the finished page to the browser. The client injects T3's theme bootstrap and shows the page in a `sandbox="allow-scripts allow-forms"` iframe.
-- A heartbeat every 10 seconds keeps the stream open while the model writes a page. Without it, mobile Safari drops the silent connection.
+- A heartbeat every 10 seconds keeps the stream active while the model writes a page, which can take a minute. Each turn logs its stages, memory use and disconnects (`[turn …]` lines in the server logs).
 
 ## Run it yourself
 
