@@ -67,6 +67,13 @@ export function Chat({ login }: { login: string }) {
       if (event.type === "text") setStatus("Writing");
     };
 
+    // iOS suspends a backgrounded page and cuts its open request; note it for the error message.
+    let wentToBackground = false;
+    const onVisibility = () => {
+      if (document.visibilityState === "hidden") wentToBackground = true;
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
@@ -84,8 +91,14 @@ export function Chat({ login }: { login: string }) {
         for (const line of lines) if (line) apply(JSON.parse(line) as ChatEvent);
       }
     } catch (error) {
-      apply({ type: "error", message: `The connection dropped before the reply finished (${String(error)}). Send the message again.` });
+      apply({
+        type: "error",
+        message: wentToBackground
+          ? "The connection dropped while this page was in the background. Phones pause the browser when you switch apps, so keep this page open until the reply finishes, then send the message again."
+          : `The connection dropped before the reply finished (${String(error)}). Send the message again.`,
+      });
     } finally {
+      document.removeEventListener("visibilitychange", onVisibility);
       setStatus(null);
     }
   }
