@@ -1,3 +1,5 @@
+import { randomUUID } from "node:crypto";
+import { freemem, totalmem } from "node:os";
 import { approveAll, CopilotClient, defineTool, ToolSet, type SessionConfig, type ToolResultObject } from "@github/copilot-sdk";
 import { previewHtml } from "./html-preview";
 import {
@@ -158,10 +160,31 @@ function toPrompt(messages: ChatMessage[]) {
 
 /** Runs one turn and streams it as newline-delimited ChatEvents. */
 export async function streamReply(login: string, token: string, messages: ChatMessage[], choice: ModelChoice) {
+  // One log line per stage, so Vercel logs show how each turn ended.
+  const turn = randomUUID().slice(0, 8);
+  const started = Date.now();
+  const trace = (stage: string) =>
+    console.log(
+      `[turn ${turn}] ${((Date.now() - started) / 1000).toFixed(1)}s mem=${Math.round((totalmem() - freemem()) / 1e6)}/${Math.round(totalmem() / 1e6)}MB ${stage}`,
+    );
+
   const encoder = new TextEncoder();
   let controller!: ReadableStreamDefaultController<Uint8Array>;
-  const stream = new ReadableStream<Uint8Array>({ start: (c) => void (controller = c) });
-  const emit = (event: ChatEvent) => controller.enqueue(encoder.encode(`${JSON.stringify(event)}\n`));
+  let disconnected = false;
+  const stream = new ReadableStream<Uint8Array>({
+    start: (c) => void (controller = c),
+    cancel: () => {
+      disconnected = true;
+      trace("client disconnected");
+    },
+  });
+  const emit = (event: ChatEvent) => {
+    if (event.type === "status") trace(`status ${event.label ?? "(writing)"}`);
+    if (event.type === "render") trace(`render "${event.render.title}" ${event.render.html.length} chars`);
+    if (event.type === "error") trace(`error ${event.message}`);
+    if (!disconnected) controller.enqueue(encoder.encode(`${JSON.stringify(event)}\n`));
+  };
+  trace(`start model=${choice.model} effort=${choice.effort ?? "default"} user=${login}`);
 
   const tools = htmlTools(emit);
   const client = await clientFor(login, token);
@@ -191,7 +214,8 @@ export async function streamReply(login: string, token: string, messages: ChatMe
       emit({ type: "error", message: error instanceof Error ? error.message : String(error) });
     } finally {
       clearInterval(heartbeat);
-      controller.close();
+      trace(disconnected ? "finished after client left" : "finished");
+      if (!disconnected) controller.close();
       await session.disconnect().catch(() => {});
     }
   })();
