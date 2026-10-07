@@ -1,6 +1,6 @@
 # Chartpilot
 
-**Chat with an agent on your own GitHub Copilot plan. It draws charts when they say more than words.**
+**Chat with an agent on your own GitHub Copilot plan. It draws charts when they say more than words, and builds dashboards from your data.**
 
 Sign in with GitHub and pick a tab:
 
@@ -98,7 +98,8 @@ bun run dev
 
 - **Copilot Free is Auto-only.** Copilot accepts a model switch, then still runs Free accounts on Auto, and effort has no effect. The picker shows other models as locked on Free. On paid plans it lists the plan's real models and each model's effort levels.
 - **Tokens expire.** A GitHub OAuth App with "Expire user access tokens" issues 8-hour tokens. The session cookie expires with the token, and users reconnect after that.
-- **Visuals take time.** A chart turn usually takes 40–75 seconds, mostly while the model writes the HTML.
+- **Visuals take time.** A chart turn in Chat usually takes 40–75 seconds, mostly while the model writes the HTML. A Visualize dashboard takes 7–18 seconds on Copilot Auto.
+- **Visualize keeps a fixed widget order.** Headline numbers come first, then gauges and charts, then tables, so "put the table first" is ignored.
 - **Each turn starts a fresh Copilot session.** Earlier turns are replayed as a transcript, so serverless instances don't need shared state.
 
 ## Stack
